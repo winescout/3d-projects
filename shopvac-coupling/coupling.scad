@@ -8,8 +8,8 @@ hose_radius = 53.2/2;
 lip_z = 2;
 lip_radius = hose_radius + 2;
 
-attachment_z = 24;
-attachment_radius = 45/2;
+attachment_z = 36;
+attachment_radius = 45.5/2;
 
 wall_thickness = 2.5;
 
