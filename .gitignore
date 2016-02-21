@@ -1,3 +1,4 @@
 *.gcode
 cnc
 *.swp
+RepRap-iTopie/*
