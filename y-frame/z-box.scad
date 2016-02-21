@@ -33,8 +33,6 @@ module z_box(){
     translate([-rod_wall_width/2,z_box_y,rod_y_1_height])
       rotate([90,0,0]) rod(z_box_y + 5);
 
-    translate([-rod_wall_width/2,z_box_y,rod_y_2_height])
-      rotate([90,0,0]) rod(z_box_y + 5);
 
     //z holes
     translate([-rod_wall_width - z_wall_xy/2 + 2, 0,0]){
@@ -53,8 +51,6 @@ module z_box(){
     }
 
     translate([-z_drive_x, z_drive_y, z_box_z]) nema17_holes(thin_wall_width + 10);
-    //wire hole
-    translate([-z_box_x, z_box_y/2 - 5,0]) cube([thin_wall_width, 10,10]);
   }
 
   module rod(height){
@@ -64,9 +60,10 @@ module z_box(){
     difference(){
       translate([-z_box_x,0,0]) cube([z_box_x, z_box_y, z_box_z]);
       
-      translate([-z_box_x + thin_wall_width, rod_wall_width,0]){
-        cube([nema_xy, nema_xy, nema_z]);
+      translate([-z_box_x, -1,0]){
+        cube([nema_xy, z_box_x + 1, nema_z]);
       }
     }
   }
+
 }

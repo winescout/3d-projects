@@ -37,11 +37,11 @@ bracket_screw_width=31;
 
 difference(){
   union(){
-    //shell();
-    //ducts();
-    translate([0,shell_y/2 + bracket_y/2,-cheek_z + bracket_z/2]){
-      bracket();
-    }
+    shell();
+    ducts();
+    /*translate([0,shell_y/2 + bracket_y/2,-cheek_z + bracket_z/2]){*/
+      /*bracket();*/
+    /*}*/
 
     //hotend_clamp();
   }
@@ -64,18 +64,18 @@ module ducts(){
 
 
 module bracket_screws(){
-  length = cheek_y + bracket_y;
-  translate([0,shell_y / 2 - cheek_y + length/2,0]){
+  length = cheek_y + bracket_y - 12;
+  translate([0,shell_y / 2 - cheek_y + (length + 12)/2,0]){
     translate([0,0,-4]){
       rotate([270,0,0]){
         translate([-shell_x/2 - fin_box_x,0,0]){
-          screw(length);
+          screw(length,0,102);
         }
       }
 
       rotate([270,0,0]){
         translate([shell_x/2 + fin_box_x,0,0]){
-          screw(length);
+          screw(length,0,12);
         }
       }
     }
@@ -83,13 +83,13 @@ module bracket_screws(){
     translate([0,0,-11]){
       rotate([270,0,0]){
         translate([-shell_x/2 - fin_box_x,0,0]){
-          screw(length);
+          screw(length,0,12);
         }
       }
 
       rotate([270,0,0]){
         translate([shell_x/2 + fin_box_x,0,0]){
-          screw(length);
+          screw(length,0,12);
         }
       }
     }
